@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
+import AppLoading from "../organisms/AppLoading";
+
 import logo from "../../images/logo.svg";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   const [users, setUsers] = React.useState([]);
   const [currentUser, setCurrentUser] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(true);
@@ -17,10 +23,10 @@ export default function Home() {
 
   const handleUserChange = (e) => setCurrentUser(e.target.value);
 
-  const handleButtonClick = (e) => console.log(e);
+  const handleButtonClick = (e) => navigate(`/users/${currentUser}`);
 
   return isLoading ? (
-    <h1>Loading...</h1>
+    <AppLoading />
   ) : (
     <div className="home center">
       <div className="home__logo">
