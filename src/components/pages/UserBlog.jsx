@@ -13,9 +13,6 @@ export default function UserBlog() {
   const [posts, setPosts] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
-  console.log("user", user);
-  console.log("posts", posts);
-
   React.useEffect(() => {
     Promise.all([
       fetch(`https://63cf09718a780ae6e6710dbe.mockapi.io/users/${userId}`).then(
@@ -37,7 +34,7 @@ export default function UserBlog() {
     <Default>
       <div className="user-blog">
         <UserBio user={user} />
-        <PostListWrapper />
+        <PostListWrapper posts={posts} />
       </div>
     </Default>
   );
