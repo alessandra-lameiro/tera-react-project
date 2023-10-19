@@ -10,7 +10,7 @@ export default function DrawerMenu(props) {
       open={props.open}
       onClose={() => props.setOpen(false)}
     >
-      <list>
+      <List>
         <ListItem>
           <Link to="/">Home</Link>
         </ListItem>
@@ -20,7 +20,7 @@ export default function DrawerMenu(props) {
         <ListItem>
           <Link to="/users/1/post">Criar Post</Link>
         </ListItem>
-      </list>
+      </List>
     </Drawer>
   );
 }
